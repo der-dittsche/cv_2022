@@ -22,6 +22,11 @@ h6 {
   font-family: "Xanh Mono", monospace;
 }
 
+::selection {
+  background: cornflowerblue;
+  color: gold;
+}
+
 /* Layout */
 
 .header {
@@ -55,6 +60,10 @@ article ~ article {
 
 .main > *:first-child {
   border-top: none;
+}
+
+.header > p::after {
+  content: " 🕉️";
 }
 
 /* Links */
