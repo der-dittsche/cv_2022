@@ -84,3 +84,11 @@ a:active {
 .nav-link:active {
   color: yellow;
 }
+
+.exp-heading {
+  display: inline;
+}
+
+.exp-period {
+  display: inline;
+}
