@@ -11,6 +11,16 @@ html {
 
 body {
   margin: 0px;
+  background-color: aliceblue;
+}
+
+aside {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  background-color: aliceblue;
+  border-radius: 5px;
 }
 
 h1,
@@ -23,14 +33,14 @@ h6 {
 }
 
 ::selection {
-  background: cornflowerblue;
-  color: gold;
+  background-color: cornflowerblue;
 }
 
 /* Layout */
 
 .header {
   padding: 48px 16px;
+  padding-top: 50px;
   text-align: center;
   background-color: cornflowerblue;
 }
@@ -63,6 +73,16 @@ article ~ article {
 
 .header > p::after {
   content: " 🕉️";
+}
+
+article > h2 {
+  position: relative;
+  margin-left: -10px;
+}
+
+main > article {
+  position: relative;
+  margin-left: 10px;
 }
 
 /* Links */
