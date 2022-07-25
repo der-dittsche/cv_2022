@@ -29,7 +29,7 @@ html {
 
 body {
   margin: 0;
-  background-color: aliceblue;
+  background-color: rgb(240, 248, 255);
 }
 
 h1,
@@ -46,12 +46,15 @@ h6 {
 }
 
 /* Layout */
+.bgheader {
+  background-image: linear-gradient(rgb(148, 148, 255), rgb(240, 248, 255));
+  background-size: header;
+}
 
 .header {
   padding: 1rem;
   padding-top: 2.5rem;
   text-align: center;
-  background-color: cornflowerblue;
 }
 
 .main {
@@ -64,10 +67,6 @@ h6 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.nav-link {
-  background-color: aliceblue;
 }
 
 .nav-link + .nav-link {
@@ -107,7 +106,7 @@ article ~ article {
 }
 
 .main > * {
-  border-top: solid grey;
+  border-top: 0.2em solid rgb(148, 148, 255);
 }
 
 .main > *:first-child {
@@ -125,6 +124,13 @@ article > section {
 
 .header > h1 {
   font-size: 4em;
+}
+
+footer {
+  text-align: center;
+  background-image: linear-gradient(rgb(240, 248, 255), rgb(148, 148, 255));
+  background-size: footer;
+  padding: 2em;
 }
 
 /* Links */
