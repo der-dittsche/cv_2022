@@ -9,6 +9,7 @@ html {
   font-family: monospace;
   font-size: 16px;
 }
+
 @media screen and (max-width: 786px) {
   html {
     font-size: 0.8em;
@@ -29,7 +30,22 @@ html {
 
 body {
   margin: 0;
-  background-color: rgb(240, 248, 255);
+  background-color: var(--page-background-color);
+  color: var(--page-text-color);
+  --main-bgcolor: cornflowerblue;
+  --page-background-color: rgb(240, 248, 255);
+  --link-hover: chocolate;
+  --link-active: yellow;
+  --nav-link-active: rgb(109, 70, 42);
+  --nav-link-hover: rgb(172, 84, 22);
+  --page-text-color: black;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    --page-background-color: black;
+    --page-text-color: white;
+  }
 }
 
 h1,
@@ -42,12 +58,15 @@ h6 {
 }
 
 ::selection {
-  background-color: cornflowerblue;
+  background-color: var(--main-bgcolor);
 }
 
 /* Layout */
 .bgheader {
-  background-image: linear-gradient(rgb(148, 148, 255), rgb(240, 248, 255));
+  background-image: linear-gradient(
+    var(--main-bgcolor),
+    var(--page-background-color)
+  );
   background-size: header;
 }
 
@@ -74,7 +93,7 @@ h6 {
 }
 
 article ~ article {
-  border-top: 0.5rem solid black;
+  border-top: 0.5rem solid var(-page-text-color);
 }
 
 .main > * + * {
@@ -106,7 +125,7 @@ article ~ article {
 }
 
 .main > * {
-  border-top: 0.2em solid rgb(148, 148, 255);
+  border-top: 0.2em solid var(--main-bgcolor);
 }
 
 .main > *:first-child {
@@ -128,7 +147,10 @@ article > section {
 
 footer {
   text-align: center;
-  background-image: linear-gradient(rgb(240, 248, 255), rgb(148, 148, 255));
+  background-image: linear-gradient(
+    var(--page-background-color),
+    var(--main-bgcolor)
+  );
   background-size: footer;
   padding: 2em;
 }
@@ -136,21 +158,21 @@ footer {
 /* Links */
 
 a:hover {
-  color: chocolate;
+  color: var(--link-hover);
 }
 a:active {
-  color: yellow;
+  color: var(--link-active);
 }
 
 .nav-link {
-  color: rgb(109, 70, 42);
+  color: var(--nav-link-active);
 }
 
 .nav-link:hover {
-  color: rgb(172, 84, 22);
+  color: var(--nav-link-hover);
 }
 .nav-link:active {
-  color: yellow;
+  color: var(--link-active);
 }
 
 .exp-heading {
@@ -172,7 +194,7 @@ a:active {
     top: 1rem;
     right: 1rem;
     padding: 0.5rem;
-    background-color: aliceblue;
+    background-color: var(--page-background-color);
     border-radius: 0.1rem;
   }
 }
