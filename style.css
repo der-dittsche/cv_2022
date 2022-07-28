@@ -37,7 +37,8 @@ body {
   --link-hover: chocolate;
   --link-active: yellow;
   --nav-link-active: rgb(109, 70, 42);
-  --nav-link-hover: rgb(172, 84, 22);
+  --nav-link-hover: rgb(255, 255, 255);
+  --nav-link-bg: rgb(125, 171, 255);
   --page-text-color: black;
 }
 
@@ -156,6 +157,9 @@ footer {
 }
 
 /* Links */
+a {
+  transition: color 0.5s;
+}
 
 a:hover {
   color: var(--link-hover);
@@ -163,13 +167,21 @@ a:hover {
 a:active {
   color: var(--link-active);
 }
+.nav-but {
+  padding: 10px;
+  border-radius: 50px;
+}
 
 .nav-link {
   color: var(--nav-link-active);
+  background-color: transparent;
+  transition: color 0.5s, background-color 0.5s;
+  transition-timing-function: ease-in;
 }
 
 .nav-link:hover {
   color: var(--nav-link-hover);
+  background-color: var(--nav-link-bg);
 }
 .nav-link:active {
   color: var(--link-active);
