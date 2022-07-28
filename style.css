@@ -186,6 +186,9 @@ a:active {
 .nav-link:active {
   color: var(--link-active);
 }
+.nav-link:focus {
+  border: 1px dotted var(--page-background-color);
+}
 
 .exp-heading {
   display: inline;
