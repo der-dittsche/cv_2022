@@ -20,6 +20,10 @@ html {
   html {
     font-size: 1.1em;
   }
+  .main-article {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -93,10 +97,6 @@ h6 {
   margin-left: 2.5rem;
 }
 
-article ~ article {
-  border-top: 0.5rem solid var(-page-text-color);
-}
-
 .main > * + * {
   margin-top: 3rem;
 }
@@ -125,11 +125,14 @@ article ~ article {
   }
 }
 
-.main > * {
+.main > .article {
   border-top: 0.2em solid var(--main-bgcolor);
 }
 
-.main > *:first-child {
+.main > .article:nth-child(1) {
+  border-top: none;
+}
+.main > .article:nth-child(2) {
   border-top: none;
 }
 
@@ -209,15 +212,17 @@ a:active {
     top: 1rem;
     right: 1.5rem;
     padding: 0.5rem;
+    opacity: 0.5;
     background-color: var(--page-background-color);
     border-radius: 0.1rem;
     transform-origin: top right;
     transition: transform 0.2s ease-in-out;
   }
-}
-.header:hover .hire-me,
-.header:focus-within .hire-me {
-  transform: scale(1.5);
+  .header:hover .hire-me,
+  .header:focus-within .hire-me {
+    opacity: 1;
+    transform: scale(1.5);
+  }
 }
 
 @media print {
