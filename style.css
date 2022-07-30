@@ -204,14 +204,20 @@ a:active {
 }
 
 @media screen and (min-width: 992px) {
-  aside {
+  .hire-me {
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 1.5rem;
     padding: 0.5rem;
     background-color: var(--page-background-color);
     border-radius: 0.1rem;
+    transform-origin: top right;
+    transition: transform 0.2s ease-in-out;
   }
+}
+.header:hover .hire-me,
+.header:focus-within .hire-me {
+  transform: scale(1.5);
 }
 
 @media print {
